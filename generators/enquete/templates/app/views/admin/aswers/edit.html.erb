@@ -1,0 +1,5 @@
+<% mapa(:aswer, :action => :edit) %>
+<%=  error_messages_for :aswer %>
+<%- form_for(:aswer, :url => admin_aswer_path(@aswer), :html => { :id => "form_search", :name => "form_search", :method => :put  }) do |f| -%>
+  <%= render :partial => @aswer, :locals => { :btnName => "alterar", :f => f } %>
+<%- end -%>

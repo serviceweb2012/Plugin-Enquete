@@ -1,0 +1,11 @@
+<% table_form_model(@aswer) do |c|%>
+	<%= field_for_form(f, c, :name) %>
+	<%= select_for_form(f, c, :question_id, @questions) %>
+	<%= field_for_form(f, c, :quant) %>
+
+
+
+
+	<%= submit_for_form(f, btnName) %>
+<% end %>
+

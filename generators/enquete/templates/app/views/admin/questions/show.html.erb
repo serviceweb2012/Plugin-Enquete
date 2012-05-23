@@ -1,0 +1,19 @@
+<% show_model(@question) do |c| %>
+	<%= field_for_show(c, :name) %>
+        <%= field_for_show(c, :cadastro) %>
+        <%= field_for_show(c, :situation) %>
+<% end %>
+<br /> <h2> Resultado das alternativas escolhidas:</h2></br>
+<table  border="1" width=100% height=60% CELLPADDING="0" CELLSPACING="0">
+  <tr>
+    <th   ALIGN=CENTER>Descrição</th>
+    <th ALIGN=CENTER>Quantidade</th>
+  </tr>
+ <% @question.aswers.each do |cp| %>
+    <tr>
+      <td ALIGN=CENTER><%= cp.name %></td>
+      <td ALIGN=CENTER><%= cp.quant %></td>
+    </tr>
+  <% end  %>
+</table>
+<h3>Total de Votos: <b><%= @total_votos%></b> </h3>

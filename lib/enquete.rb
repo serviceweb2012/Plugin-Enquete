@@ -1,0 +1,2 @@
+module Enquete
+end

@@ -1,0 +1,21 @@
+<% table_form_model(@question) do |c|%>
+  <%= field_for_form(f, c, :name) %>
+
+  <tr class="fieldShow">
+    <td>
+      <div class="field">
+        <span>
+          <label for="passowrds">Resposta</label>
+          <div class="addNew"><%= link_to_function "Adicionar nova resposta" do |page| page.insert_html :bottom, :aswers, :partial => "aswer", :object => Aswer.new end %></div>
+          <div class="text" id="aswers">
+            <%= render :partial => "aswer", :collection => @question.aswers %>
+          </div>
+        </span>
+      </div>
+    </td>
+  </tr>
+
+ <%= field_for_form(f, c, :cadastro) %> 
+ <%= field_for_form(f, c, :situation) %>
+  <%= submit_for_form(f, btnName) %>
+<% end %>

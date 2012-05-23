@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:addthis="http://www.addthis.com/help/client-api">
+  <head>
+    <title> </title>
+    <link rel="shortcut icon" href="images/favico.ico" />
+    <link href="stylesheets/stylesheet.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--<link href="stylesheets/jquery.twitter.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" type="text/css" />-->
+
+    <script src="scripts/jquery.v1.6.2.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="scripts/jquery.fancybox-1.3.4.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/jquery.color.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/jquery.twitter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/jquery.cycle.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="scripts/tools.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4ea1ad8c345433d1"></script>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="author" content="Serviceweb.com - Serviço de Desenvolvimento WEB!" />
+
+    <meta name="reply-to" content="serviceweb@serviceweb.com.br" />
+    <style type="text/css">
+      body {font: normal 15px "Trebuchet Ms", Arial, Tahoma, Sans-serif;background-color: #FAFAFA;background-image: none;cursor: default;}
+      h1{margin: 10px 0;font: normal 30px "Bebas Neue";color: #B0BBC4;}
+      #result{width: 580px;margin: 0 auto;position: relative;}
+      #result h2{width: 580px;font-weight: normal;font-size: 1.4em;color: #405F9B;position: relative;margin-bottom: 10px;padding-bottom: 10px;background: Transparent url(images/separator.png) repeat-x bottom right;}
+
+      .results{width: 580px;position: relative;}
+      .results li{width: 580px;min-height: 40px;margin: 5px 0;position: relative;}
+      .results li strong{font-weight: normal;position: relative;display: inline-block;}
+
+      .results li div{width: 570px;height: 30px;padding: 5px;margin: 5px 0;position: relative;background-color: #FAFAFA;-moz-box-shadow: inset 0 0 5px #777;-webkit-box-shadow: inset 0 0 5px#777;box-shadow: inner 0 0 5px #777border-radius:3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
+      .results li div.userVote{background-color: #DDD;}
+      .results li div span{height: 30px;background-color: #69CB69;background-image: -webkit-gradient(linear, left top, left bottom, from(#69CB69), to(#A9E1A9));background-image: -moz-linear-gradient(top, #69CB69, #A9E1A9);background-image: linear-gradient(top, #69CB69, #A9E1A9);border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;position: relative;display: inline-block;}
+      .results li div span em{font-style: normal;padding: 4px 10px;}
+      .results li div span div{background: none!important;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none;position: absolute;top: -5px;left: 1px;}
+
+      .info{margin-top: 5px;display: block;}
+      .info p{margin: 5px 0;display: block;}
+      .info p em{font-style: normal;font-weight: bold;}
+    </style>
+  </head>
+  <body>
+    <% unless @question.nil? %>
+      <div id="result">
+        <h1>resultados da enquete</h1>
+        <h2><%= @question.name %> </h2>
+
+        <ul class="results">
+          <% @question.aswers.each_with_index  do |cp, index| %>
+            <%  por = "#{@porct[index]}"+"%"%>
+            <% if session[:aswer] == cp.id %>
+              <li><strong><%= cp.name %></strong><div class="userVote"><span class="progress" style="width: <%= por %>;"><div><em class="percentage"><%= @porct[index] + ' %'%></em>-<em class="numbers"><%= cp.quant %></em>votos</div></span></div></li>
+            <% else %>
+              <li><strong><%= cp.name %></strong><div><span class="progress" style="width: <%= por %>;"><div><em class="percentage"><%= @porct[index] + ' %'%></em>-<em class="numbers"><%= cp.quant %></em>votos</div></span></div></li>
+            <% end %>
+          <% end %>
+        </ul>
+        <span class="clear">&nbsp;</span>
+        <div class="info"><p>Total de votos: <em><%= @total_votos %></em></p><p>Enquete criada em <em><%= @question.created_at.strftime("%d/%m/%Y") %></em></p></div>
+
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+          <a class="addthis_button_facebook" title="Compartilhar galeria no Facebook"></a>
+          <a class="addthis_button_twitter" title="Twittar galeria"></a>
+          <a class="addthis_button_email" title="Enviar a galeria para um amigo"></a>
+          <a class="addthis_button_orkut" title="Enviar para o orkut"></a>
+          <a class="addthis_button_compact"></a>
+          <a class="addthis_counter addthis_bubble_style"></a>
+        </div>
+      </div>
+    <%  end %>
+  </body>
+</html>

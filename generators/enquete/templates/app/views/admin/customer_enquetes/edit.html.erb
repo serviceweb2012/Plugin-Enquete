@@ -1,0 +1,5 @@
+<% mapa(:customer_enquete, :action => :edit) %>
+<%=  error_messages_for :customer_enquete %>
+<%- form_for(:customer_enquete, :url => admin_customer_enquete_path(@customer_enquete), :html => { :id => "form_search", :name => "form_search", :method => :put  }) do |f| -%>
+  <%= render :partial => @customer_enquete, :locals => { :btnName => "alterar", :f => f } %>
+<%- end -%>

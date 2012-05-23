@@ -1,0 +1,5 @@
+<% mapa(:customer_enquete) %>
+<%= imprimeSearchTools :customer_enquete %>
+<% unless @customer_enquetes.empty? %>
+<%= table_list_model(:customer_enquete, @customer_enquetes) %>
+<% end %>

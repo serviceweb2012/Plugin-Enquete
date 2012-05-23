@@ -1,0 +1,13 @@
+<% table_form_model(@customer_enquete) do |c|%>
+	<%= field_for_form(f, c, :name) %>
+	<%= field_for_form(f, c, :email) %>
+	<%= field_for_form(f, c, :phone) %>
+	<%= field_for_form(f, c, :city) %>
+	<%= field_for_form(f, c, :situation) %>
+
+
+
+
+	<%= submit_for_form(f, btnName) %>
+<% end %>
+

@@ -1,0 +1,5 @@
+<% mapa(:question, :action => :new) %>
+<%=  error_messages_for :question %>
+<%- form_for(:question, :url => admin_questions_path, :html => {:id => "form_search", :name => "form_search" }) do |f| -%>
+  <%= render :partial => @question, :locals => { :btnName => "cadastrar", :f => f } %>
+<%- end -%>

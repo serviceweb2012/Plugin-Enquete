@@ -1,0 +1,2 @@
+no view chamar o metodo gera_enquete(question) passando como parametro o question(pergunta)
+na application.html deve conter os javaScript enquete.js e jquery.js e o arquivo css enquete.css

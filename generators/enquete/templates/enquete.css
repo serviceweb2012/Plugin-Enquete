@@ -1,0 +1,53 @@
+.questions{color: #777;}
+.questions h1{font: normal 25px "Trebuchet MS";color: #B0BBC4;}
+.questions p{min-height: 25px;padding: 5px 0;}
+.questions form p:hover{background-color: #F0F0F0;}
+.questions input[type="radio"]{margin: 2px 10px 0 5px;position: relative;}
+
+.inputs{margin-top: 15px;position: relative;display: block;}
+.inputs input{height: 30px;line-height: 30px;padding: 0 15px;border: none;color: #666;border-radius: 5px;-moz-broder-radius: 5px;-webkit-border-radius: 5px;background-color: #FFF;-moz-box-shadow: inset 0 0 5px #777;-webkit-box-shadow: inset 0 0 5px#777;box-shadow: inner 0 0 5px #777;cursor: pointer;position: relative;float: left;behavior: url(PIE.htc);}
+.votar{margin: 0 15px 0 25px;}
+*+html .votar{margin: 0 15px 0 10px;}
+
+.cad_user h1{margin-bottom: 10px;font: normal 25px "Trebuchet MS";color: #B0BBC4;}
+.cad_user{width: 600px;position: relative;margin:0 auto; overflow-x:hidden; }
+.cad_user div{margin-left: 10px;margin-bottom: 20px;padding-bottom: 20px;background: Transparent url(../images/separator.png) repeat-x bottom right;}
+.cad_user form{display: block;}
+.cad_user form label{width: 100%;margin: 10px 0 10px 17px;font-size: .9em;color: #666;position: relative;display: block;}
+.cad_user form p label{width: 47%;float: left;}
+.cad_user form label input{width: 93%;height: 30px;line-height: 30px;margin-top: 10px;padding: 0 5px;border: 1px solid #DDD;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
+.cad_user form textarea{width: 93%;height: 150px;margin-top: 10px;padding: 5px 6px;border: 1px solid #DDD;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;}
+.cad_user .button input{width: 110px;height: 50px;margin: 10px 22px 10px 0;color: #FFF;border: 1px solid #B0BBC4;background-color: #B0BBC4;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;position: relative;float: right;cursor: pointer;}
+.cad_user .button input:hover{background-color: #405F9B;border: 1px solid #405F9B;}
+.cad_user .clear_form input{border: none;background: none;color: #069;cursor: pointer;margin: 20px 0 0 10px;}
+.cad_user .clear_form input:hover{text-decoration: underline;}
+.cad_user .required.error{border: 1px solid #E85A5A!important;}
+.cad_user .relation{width: 700px;position: relative;}
+.cad_user .relation ul li{margin: 0 15px;position: relative;float: left;}
+
+#container .enquete h2{ font: normal 18px "Trebuchet MS";color: #B0BBC4; }
+#container .enquete .captcha{ margin: 5px 2px 0 19px; position: relative; float: left; display: inline-block;}
+#container .enquete .captcha #captcha{ width: 48px; height: 20px;}
+#container .numero{ margin: 5px 0 0 0; background: transparent url(../images/captcha.jpg) no-repeat top left; width: 52px; height: 24px; display: inline-block; }
+#container .numero span{ display: block; text-align: center; width: 40px; height: 24px; padding-top: 0px; font-weight: bolder; color: #666; padding-left: 2px; }
+
+
+#navInformation {
+    display: none;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #c0bc59;
+    background-color: #faf8c7;
+    position: fixed;}
+#navInformation h1 {margin-left: 10px;font-size: 1.2em;float: left;}
+#navInformation a {
+        margin-left: 10px;
+        padding-left: 10px;
+        font-style: italic;
+        text-decoration: underline;
+        color: #069;
+        border-left: 1px solid #069;}
+#navInformation a:hover {color: #060;}

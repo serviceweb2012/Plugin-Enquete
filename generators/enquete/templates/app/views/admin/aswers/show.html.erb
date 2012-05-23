@@ -1,0 +1,5 @@
+<% show_model(@aswer) do |c| %>
+	<%= field_for_show(c, :name) %>
+  <%= field_for_show(c, :question_id, :content => c.question.name) %>
+	<%= field_for_show(c, :quant) %>
+<% end %>

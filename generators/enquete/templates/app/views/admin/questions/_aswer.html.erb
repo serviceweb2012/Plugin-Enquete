@@ -1,0 +1,18 @@
+<div class="contact" id='<%= dom_id(aswer) %>' style="margin: 0 0 -7px -17px;padding: 10px 0 10px 23px;display: block;width: 100%;border-bottom: 1px solid #C8D7D7;">
+
+  <% fields_for "question[aswer_attributes][]", aswer do |aswer_form| %>
+    <span>Pergunta
+      <%= aswer_form.text_field :name, :index => nil %>
+    </span>
+    <span class="addDelete">
+      <% if aswer.new_record? %>
+        <%= link_to_function "Remover", "javascript: $(this).parent().parent().remove()" %>
+      <% else %>
+        <%= link_to 'Remover', admin_aswer_path(aswer),:confirm => 'Confirma exclusão?', :method => :delete %>
+        <%= aswer_form.hidden_field :id, :index => nil %>
+        <%= aswer_form.hidden_field :should_destroy, :index => nil, :class => "should_destroy" %>
+      <% end %>
+    </span>
+  <% end %>
+  <div class="clear">&nbsp;</div>
+</div>
